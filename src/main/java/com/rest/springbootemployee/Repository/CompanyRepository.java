@@ -70,4 +70,10 @@ public class CompanyRepository {
         updatedCompany.setEmployeeList(company.getEmployeeList());
         return updatedCompany;
     }
+
+    public Company delete(Integer id) {
+        Company company = findById(id);
+        companies.remove(company);
+        return company;
+    }
 }

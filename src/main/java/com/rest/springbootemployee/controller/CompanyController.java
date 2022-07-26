@@ -37,12 +37,17 @@ public class CompanyController {
     }
 
     @PostMapping
-    public Company create(Company company){
+    public Company create(@RequestBody Company company){
         return companyRepository.insert(company);
     }
 
     @PutMapping("/{id}")
     public Company update(@PathVariable Integer id, @RequestBody Company company){
         return companyRepository.update(id, company);
+    }
+
+    @DeleteMapping("/{id}")
+    public Company delete(@PathVariable Integer id){
+        return companyRepository.delete(id);
     }
 }
