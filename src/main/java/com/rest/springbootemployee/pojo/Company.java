@@ -2,20 +2,16 @@ package com.rest.springbootemployee.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee{
+public class Company {
 
     private Integer id;
 
-    private String name;
+    private List<Employee> employeeList;
 
-    private Integer age;
-
-    private String gender;
-
-    private Integer salary;
 }
-
