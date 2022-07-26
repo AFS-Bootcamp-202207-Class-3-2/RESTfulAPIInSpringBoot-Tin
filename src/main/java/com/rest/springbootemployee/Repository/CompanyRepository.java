@@ -36,4 +36,9 @@ public class CompanyRepository {
                 .findFirst()
                 .orElseThrow(CompanyNotFoundException::new);
     }
+
+    public List<Employee> findEmployeesById(Integer id) {
+        Company company = findById(id);
+        return company.getEmployeeList();
+    }
 }
