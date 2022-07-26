@@ -63,4 +63,11 @@ public class CompanyRepository {
                 .max().orElse(DEFAULT_ID_MINUS_1);
         return maxExistingId + 1;
     }
+
+    public Company update(Integer id, Company company) {
+        Company updatedCompany = findById(id);
+        updatedCompany.setCompanyName(company.getCompanyName());
+        updatedCompany.setEmployeeList(company.getEmployeeList());
+        return updatedCompany;
+    }
 }
