@@ -1,5 +1,6 @@
 package com.rest.springbootemployee.Repository;
 
+import com.rest.springbootemployee.execption.CompanyNotFoundException;
 import com.rest.springbootemployee.pojo.Company;
 import com.rest.springbootemployee.pojo.Employee;
 import org.springframework.stereotype.Repository;
@@ -29,4 +30,10 @@ public class CompanyRepository {
     }
 
 
+    public Company findById(Integer id) {
+        return this.companies.stream()
+                .filter(company -> company.getId().equals(id))
+                .findFirst()
+                .orElseThrow(CompanyNotFoundException::new);
+    }
 }

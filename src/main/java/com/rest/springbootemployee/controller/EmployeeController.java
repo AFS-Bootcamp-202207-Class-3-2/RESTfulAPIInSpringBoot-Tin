@@ -20,12 +20,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public Employee getEmployeesById(@PathVariable Integer id){
+    public Employee getEmployeeById(@PathVariable Integer id){
         return employeeRepository.findById(id);
     }
 
     @GetMapping(params = {"gender"})
-    public List<Employee> getEmployeesByGender(@RequestParam("gender")String gender){
+    public List<Employee> getEmployeeByGender(@RequestParam("gender")String gender){
         return employeeRepository.findByGender(gender);
     }
 

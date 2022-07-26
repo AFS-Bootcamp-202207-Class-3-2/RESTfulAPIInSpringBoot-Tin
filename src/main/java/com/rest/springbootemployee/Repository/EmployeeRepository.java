@@ -27,7 +27,7 @@ public class EmployeeRepository {
 
     public Employee findById(Integer id) {
         return employees.stream()
-                .filter(employee -> employee.getId()==id).findFirst()
+                .filter(employee -> employee.getId().equals(id)).findFirst()
                 .orElseThrow(EmployeeNotFoundException::new);
     }
 
