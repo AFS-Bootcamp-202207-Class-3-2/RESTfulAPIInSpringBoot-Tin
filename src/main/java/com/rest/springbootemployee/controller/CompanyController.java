@@ -35,4 +35,9 @@ public class CompanyController {
     public List<Company> findCompaniesByPage(@RequestParam int page, @RequestParam int pageSize){
         return companyRepository.findByPage(page, pageSize);
     }
+
+    @PostMapping
+    public Company create(Company company){
+        return companyRepository.insert(company);
+    }
 }
