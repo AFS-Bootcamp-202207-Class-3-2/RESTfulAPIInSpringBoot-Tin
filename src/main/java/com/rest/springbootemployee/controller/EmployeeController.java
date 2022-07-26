@@ -34,5 +34,10 @@ public class EmployeeController {
         return employeeRepository.findByPage(page,pageSize);
     }
 
-    
+    @PostMapping
+    public Employee create(@RequestBody Employee employee){
+        return employeeRepository.insert(employee);
+    }
+
+
 }
