@@ -12,6 +12,8 @@ public class Company {
 
     private Integer id;
 
+    private String companyName;
+
     private List<Employee> employeeList;
 
 }
